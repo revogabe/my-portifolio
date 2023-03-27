@@ -16,7 +16,7 @@ const lato = Lato({
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en" className={lato.className}>
-      <body className="bg-black/95 mx-auto max-w-5xl">
+      <body className="mx-auto max-w-5xl bg-black/95">
         <Header />
         {children}
       </body>
