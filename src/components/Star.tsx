@@ -2,9 +2,10 @@
 import { StarIcon } from '@heroicons/react/24/outline'
 import { StarIcon as StarSolid } from '@heroicons/react/24/solid'
 import { useEffect, useState } from 'react'
+import { parseCookies, setCookie } from 'nookies'
 
 export function Star() {
-  const [isStarred] = useState(window.localStorage.getItem('isStarred'))
+  const [isStarred, setIsStarred] = useState('')
   const [starOn, setStarOn] = useState(false)
   const [starsCount, setStarCount] = useState('')
 
@@ -16,8 +17,12 @@ export function Star() {
     })
 
   useEffect(() => {
-    window.localStorage.getItem('isStarred')
-  }, [isStarred])
+    const { isStarred: token } = parseCookies()
+
+    if (token) {
+      setIsStarred(token)
+    }
+  }, [])
 
   async function handleAddStars() {
     if (isStarred !== 'true' && starOn === false) {
@@ -32,7 +37,11 @@ export function Star() {
       })
 
       setStarCount(starsCount + 1)
-      window.localStorage.setItem('isStarred', 'true')
+      setIsStarred('true')
+      setCookie(undefined, 'isStarred', 'true', {
+        maxAge: 60 * 60 * 24 * 30, // 30 days
+        path: '/',
+      })
       setStarOn(true)
     } else {
       return null
