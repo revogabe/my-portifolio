@@ -6,7 +6,7 @@ async function handler(req: NextApiRequest, res: NextApiResponse) {
     const { starsCount } = req.body
     const data = await prisma.stars.update({
       where: {
-        id: '64220cc6fea027a3eeddc5ad',
+        id: '6421f968b4de1d6a2bfc17c9',
       },
       data: {
         starsCount,
