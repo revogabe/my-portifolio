@@ -15,7 +15,7 @@ async function handler(req: NextApiRequest, res: NextApiResponse) {
     res.status(200).json(data)
   }
 
-  await prisma.stars.findMany().then((data) => {
+  await prisma.stars.findMany().then((data: any[]) => {
     res.status(200).json(data[0])
   })
 }
