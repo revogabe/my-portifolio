@@ -4,7 +4,7 @@ import { StarIcon as StarSolid } from '@heroicons/react/24/solid'
 import { useEffect, useState } from 'react'
 
 export function Star() {
-  const [isStarred] = useState(localStorage.getItem('isStarred'))
+  const [isStarred] = useState(window.localStorage.getItem('isStarred'))
   const [starOn, setStarOn] = useState(false)
   const [starsCount, setStarCount] = useState('')
 
@@ -16,7 +16,7 @@ export function Star() {
     })
 
   useEffect(() => {
-    localStorage.getItem('isStarred')
+    window.localStorage.getItem('isStarred')
   }, [isStarred])
 
   async function handleAddStars() {
@@ -32,7 +32,7 @@ export function Star() {
       })
 
       setStarCount(starsCount + 1)
-      localStorage.setItem('isStarred', 'true')
+      window.localStorage.setItem('isStarred', 'true')
       setStarOn(true)
     } else {
       return null
