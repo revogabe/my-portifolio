@@ -3,8 +3,8 @@ import Image from 'next/image'
 
 export default function Home() {
   return (
-    <main className="mt-32 flex h-screen w-full flex-col items-center justify-start gap-4 px-6">
-      <div className="flex w-full items-center justify-start gap-6">
+    <main className="mt-32 flex h-screen w-full flex-col items-center justify-start gap-4">
+      <div className="flex w-full items-center justify-between gap-6">
         <div className="flex w-full items-center justify-start gap-6">
           <Image
             src="https://github.com/revogabe.png"

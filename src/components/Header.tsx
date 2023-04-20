@@ -1,12 +1,11 @@
-// import { GitHubLogoIcon, LinkedInLogoIcon } from '@radix-ui/react-icons'
 import Link from 'next/link'
 import { LinkToPage } from './LinkToPage'
 import { CodeBracketSquareIcon } from '@heroicons/react/24/solid'
 
 export function Header() {
   return (
-    <header className=" fixed inset-0 flex h-max items-center justify-center backdrop-blur-md">
-      <div className="flex w-full max-w-5xl items-center justify-between py-4 px-6">
+    <header className=" fixed inset-0 z-30 flex h-max items-center justify-center backdrop-blur-md">
+      <div className="flex w-full max-w-5xl items-center justify-between py-4 px-4">
         <Link href="/">
           <div className="flex items-center justify-start gap-2">
             <CodeBracketSquareIcon

@@ -3,13 +3,14 @@ import { prisma } from '@/lib/prisma'
 
 async function handler(req: NextApiRequest, res: NextApiResponse) {
   if (req.method === 'PATCH') {
-    const { starsCount } = req.body
     const data = await prisma.stars.update({
       where: {
         id: '6421f968b4de1d6a2bfc17c9',
       },
       data: {
-        starsCount,
+        starsCount: {
+          increment: 1,
+        },
       },
     })
     res.status(200).json(data)
