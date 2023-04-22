@@ -9,13 +9,14 @@ type CardProps = {
   title: string
   description: string
   banner?: string
-  link?: string
+  link: string
   prNumber?: string
   libLink?: string
   libName?: string
   statusPr?: 'open' | 'merged'
   code?: string
-  variant: 'default' | 'pr'
+  variant: 'default' | 'pr' | 'minimal'
+  className?: string
 }
 
 export const CardContainer = ({
@@ -29,11 +30,14 @@ export const CardContainer = ({
   libName,
   code,
   variant,
+  className,
 }: CardProps) => {
   return (
     <>
-      {variant === 'default' ? (
-        <div className="group h-max flex flex-col gap-6 border bg-zinc-900/25 duration-200 ease-out  border-zinc-800 py-8 rounded-lg px-8 items-start justify-center w-full">
+      {variant === 'default' && (
+        <div
+          className={`group h-max flex flex-col gap-6 border bg-zinc-900/25 duration-200 ease-out  border-zinc-800 py-8 rounded-lg px-8 items-start justify-center w-full ${className}`}
+        >
           {banner && (
             <div className="w-full overflow-hidden">
               <Image
@@ -72,7 +76,8 @@ export const CardContainer = ({
             </Link>
           </div>
         </div>
-      ) : (
+      )}
+      {variant === 'pr' && (
         <div className="group cursor-pointer h-max flex md:flex-row flex-col gap-6 border bg-zinc-900/25 duration-200 ease-out  border-zinc-800 py-8 rounded-lg px-8 items-start justify-center w-full">
           <div className=" w-full flex flex-col gap-6 items-start justify-center">
             <div className="flex gap-4 items-center justify-start">
@@ -148,6 +153,25 @@ export const CardContainer = ({
             </Link>
           </div>
         </div>
+      )}
+      {variant === 'minimal' && (
+        <Link
+          draggable={false}
+          href={link}
+          className={`group hover:bg-zinc-900 h-max flex flex-col gap-6 border bg-zinc-900/25 duration-200 ease-out  border-zinc-800 py-3 rounded-lg px-6 items-start justify-center w-full ${className}`}
+        >
+          <div className="flex-1">
+            <h1 className="text-xl font-bold text-zinc-200 group-hover:text-emerald-400">
+              {title}
+            </h1>
+            <p
+              title={description}
+              className="text-sm line-clamp-2 font-normal text-zinc-400"
+            >
+              {description}
+            </p>
+          </div>
+        </Link>
       )}
     </>
   )

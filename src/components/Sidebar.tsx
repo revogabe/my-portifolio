@@ -1,4 +1,4 @@
-import { LinkSide } from './link-side'
+import { LinkSide } from './LinkSide'
 
 export function Sidebar() {
   return (

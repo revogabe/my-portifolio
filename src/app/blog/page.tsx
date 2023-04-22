@@ -1,7 +1,14 @@
+import { CardContainer } from '@/components/CardContainer'
+
 export default function Blog() {
   return (
     <main className="flex h-screen w-full items-center justify-center">
-      <h1 className="text-4xl font-bold text-zinc-100">About</h1>
+      <CardContainer
+        variant="default"
+        title="Work in progress"
+        description="This page is under construction, but you can see the progress in the
+        repository below."
+      />
     </main>
   )
 }
