@@ -3,6 +3,7 @@ import '../styles/globals.css'
 import { Lato } from 'next/font/google'
 import { Header } from '@/components/Header'
 import Providers from './Provider'
+import { CommandMenu } from '@/components/CommandMenu'
 
 export const metadata = {
   title: 'My Portfolio',
@@ -17,10 +18,13 @@ const lato = Lato({
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en" className={lato.className}>
-      <body className="relative text-zinc-300 w-full mx-auto overflow-x-hidden max-w-5xl bg-zinc-950 px-6">
+      <body className="text-zinc-300 w-screen min-h-screen bg-zinc-950 px-6 overflow-x-hidden">
         <Providers>
           <Header />
-          {children}
+          <div className="w-full max-w-5xl mx-auto">
+            {children}
+            <CommandMenu />
+          </div>
         </Providers>
       </body>
     </html>

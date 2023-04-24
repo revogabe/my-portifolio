@@ -22,7 +22,7 @@ export const CommandMenu = () => {
     <Command.Dialog
       open={open}
       onOpenChange={setOpen}
-      className="z-50 fixed top-0 px-4 bg-red-500/10 left-0 pt-36 w-screen h-screen flex items-start justify-center "
+      className="z-50 fixed top-0 px-4 bg-zinc-950/75 backdrop-blur-[1px] left-0 pt-36 w-screen h-screen flex items-start justify-center"
     >
       <Command className="text-zinc-300 flex flex-col items-start justify-start gap-3 w-full max-w-md bg-zinc-950/90 border border-zinc-800 backdrop-blur-sm p-4 rounded-lg">
         <Command.Input
