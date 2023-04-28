@@ -14,9 +14,9 @@ type CardProps = {
   libLink?: string
   libName?: string
   statusPr?: 'open' | 'merged'
-  code?: string
   variant: 'default' | 'pr' | 'minimal'
   className?: string
+  deploy?: string
 }
 
 export const CardContainer = ({
@@ -28,24 +28,25 @@ export const CardContainer = ({
   statusPr,
   libLink,
   libName,
-  code,
   variant,
   className,
+  deploy,
 }: CardProps) => {
   return (
     <>
       {variant === 'default' && (
         <div
-          className={`group h-max flex flex-col gap-6 border bg-zinc-900/25 duration-200 ease-out  border-zinc-800 py-8 rounded-lg px-8 items-start justify-center w-full ${className}`}
+          className={`group flex h-max w-full flex-col items-start justify-center gap-6 rounded-lg  border border-zinc-800 bg-zinc-900/25 p-8 duration-200 ease-out${className}`}
         >
           {banner && (
-            <div className="w-full overflow-hidden">
+            <div className="w-full overflow-hidden rounded-md">
               <Image
                 src={banner}
                 alt=""
                 width={400}
                 height={400}
-                className="w-full h-32 rounded-md hover:scale-105 duration-300 ease-out hover:brightness-110 brightness-75 -mb-3 object-cover"
+                quality={100}
+                className="-mb-3 h-32 w-full rounded-md object-cover object-top brightness-75 duration-300 ease-out hover:h-40 hover:scale-105 hover:brightness-110"
               />
             </div>
           )}
@@ -53,38 +54,40 @@ export const CardContainer = ({
             <h1 className="text-2xl font-bold text-zinc-200">{title}</h1>
             <p
               title={description}
-              className="text-base line-clamp-2 font-normal text-zinc-400"
+              className="line-clamp-2 text-base font-normal text-zinc-400"
             >
               {description}
             </p>
           </div>
-          <div className="flex md:flex-row flex-col w-full gap-3">
+          <div className="flex w-full flex-col gap-3 md:flex-row">
             <a
               href={link}
               draggable={false}
-              className="flex w-full bg-zinc-900 hover:bg-zinc-800 duration-200 ease-out px-4 rounded-md active:scale-95  py-3 items-center justify-center gap-2 text-base text-white"
+              className="flex w-full items-center justify-center gap-2 rounded-md bg-zinc-900 px-4 py-3  text-base text-white duration-200 ease-out hover:bg-zinc-800 active:scale-95"
               target="_blank"
               rel="noreferrer"
             >
               <GitHubLogoIcon width={20} height={20} /> Github
             </a>
-            <Link
-              className="flex w-full bg-zinc-900 hover:bg-zinc-800 duration-200 ease-out px-4 rounded-md active:scale-95  py-3 items-center justify-center gap-2 text-base text-white"
-              href="#"
-            >
-              📖 Read more
-            </Link>
+            {deploy && (
+              <Link
+                className="flex w-full items-center justify-center gap-2 rounded-md bg-zinc-900 px-4 py-3  text-base text-white duration-200 ease-out hover:bg-zinc-800 active:scale-95"
+                href={deploy}
+              >
+                🌐 Deploy
+              </Link>
+            )}
           </div>
         </div>
       )}
       {variant === 'pr' && (
-        <div className="group cursor-pointer h-max flex md:flex-row flex-col gap-6 border bg-zinc-900/25 duration-200 ease-out  border-zinc-800 py-8 rounded-lg px-8 items-start justify-center w-full">
-          <div className=" w-full flex flex-col gap-6 items-start justify-center">
-            <div className="flex gap-4 items-center justify-start">
+        <div className="group flex h-max w-full cursor-pointer flex-col items-start justify-center gap-6 rounded-lg border  border-zinc-800 bg-zinc-900/25 p-8 duration-200 ease-out md:flex-row">
+          <div className=" flex w-full flex-col items-start justify-center gap-6">
+            <div className="flex items-center justify-start gap-4">
               {statusPr === 'open' && (
                 <div
                   draggable={false}
-                  className="flex items-center justify-center gap-2 text-sm font-bold text-white bg-emerald-500 px-6 w-max py-2 rounded-full"
+                  className="flex w-max items-center justify-center gap-2 rounded-full bg-emerald-500 px-6 py-2 text-sm font-bold text-white"
                 >
                   <BranchOpen />
                   <p>Open</p>
@@ -93,7 +96,7 @@ export const CardContainer = ({
               {statusPr === 'merged' && (
                 <div
                   draggable={false}
-                  className="flex items-center justify-center gap-2 text-sm font-bold text-white bg-purple-500 px-6 w-max py-2 rounded-full"
+                  className="flex w-max items-center justify-center gap-2 rounded-full bg-purple-500 px-6 py-2 text-sm font-bold text-white"
                 >
                   <BranchMerged />
                   <p>Merged</p>
@@ -101,7 +104,7 @@ export const CardContainer = ({
               )}
               <div
                 draggable={false}
-                className="flex items-center justify-center gap-2 text-sm text-zinc-400 hover:bg-zinc-800 duration-200 ease-out cursor-pointer w-max bg-zinc-900 px-4 rounded-md py-2"
+                className="flex w-max cursor-pointer items-center justify-center gap-2 rounded-md bg-zinc-900 px-4 py-2 text-sm text-zinc-400 duration-200 ease-out hover:bg-zinc-800"
               >
                 <LibIcon />
                 <a
@@ -120,37 +123,34 @@ export const CardContainer = ({
                 <a
                   href={link}
                   target="_blank"
-                  className="underline text-emerald-400 text-xl"
+                  className="text-xl text-emerald-400 underline"
                   rel="noreferrer"
                 >{`#${prNumber}`}</a>
               </h1>
               <p
                 title={description}
-                className="text-base line-clamp-2 font-normal text-zinc-400"
+                className="line-clamp-2 text-base font-normal text-zinc-400"
               >
                 {description}
               </p>
             </div>
-            <code className="flex w-full items-center justify-start duration-300 ease-out text-white bg-zinc-900 p-6 rounded-md">
-              {code}
-            </code>
           </div>
-          <div className="flex md:flex-col h-full items-start justify-start flex-row w-full md:max-w-[220px] gap-4">
+          <div className="flex h-full w-full flex-row items-start justify-start gap-4 md:max-w-[220px] md:flex-col">
             <a
               href={link}
               draggable={false}
-              className="flex w-full bg-zinc-900 hover:bg-zinc-800 duration-200 ease-out px-4 rounded-md active:scale-95  py-3 items-center justify-center gap-2 text-base text-white"
+              className="flex w-full items-center justify-center gap-2 rounded-md bg-zinc-900 px-4 py-3  text-base text-white duration-200 ease-out hover:bg-zinc-800 active:scale-95"
               target="_blank"
               rel="noreferrer"
             >
               <GitHubLogoIcon width={20} height={20} /> Github
             </a>
-            <Link
-              className="flex w-full bg-zinc-900 hover:bg-zinc-800 duration-200 ease-out px-4 rounded-md active:scale-95  py-3 items-center justify-center gap-2 text-base text-white"
-              href="#"
+            <button
+              disabled
+              className="flex w-full items-center justify-center gap-2 rounded-md bg-zinc-900 px-4 py-3 text-base text-white duration-200 ease-out hover:bg-zinc-800 active:scale-95 disabled:opacity-50"
             >
               📖 Read more
-            </Link>
+            </button>
           </div>
         </div>
       )}
@@ -158,7 +158,8 @@ export const CardContainer = ({
         <Link
           draggable={false}
           href={link}
-          className={`group hover:bg-zinc-900 h-max flex flex-col gap-6 border bg-zinc-900/25 duration-200 ease-out  border-zinc-800 py-3 rounded-lg px-6 items-start justify-center w-full ${className}`}
+          target="_blank"
+          className={`group flex h-max w-full flex-col items-start justify-center gap-6 rounded-lg border  border-zinc-800 bg-zinc-900/25 px-6 py-3 duration-200 ease-out hover:bg-zinc-900 ${className}`}
         >
           <div className="flex-1">
             <h1 className="text-xl font-bold text-zinc-200 group-hover:text-emerald-400">
@@ -166,7 +167,7 @@ export const CardContainer = ({
             </h1>
             <p
               title={description}
-              className="text-sm line-clamp-2 font-normal text-zinc-400"
+              className="line-clamp-2 text-sm font-normal text-zinc-400"
             >
               {description}
             </p>

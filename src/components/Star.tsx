@@ -49,13 +49,13 @@ export function Star() {
   return (
     <div>
       {isFetching ? (
-        <button className="animate-pulse flex items-center gap-2 rounded-md transition-all duration-200 ease-out bg-zinc-900 py-2 px-4">
+        <button className="flex animate-pulse items-center gap-2 rounded-md bg-zinc-900 px-4 py-2 transition-all duration-200 ease-out">
           <StarSolid className="text-zinc-800/75" width={28} height={28} />
-          <div className="flex items-center gap-2 rounded-md transition-all duration-200 ease-out bg-zinc-800/75 py-3 px-4" />
+          <div className="flex items-center gap-2 rounded-md bg-zinc-800/75 px-4 py-3 transition-all duration-200 ease-out" />
         </button>
       ) : (
         <button
-          className="flex items-center gap-2 rounded-md transition-all duration-200 ease-out hover:bg-zinc-900 hover:py-2 hover:px-4"
+          className="flex items-center gap-2 rounded-md transition-all duration-200 ease-out hover:bg-zinc-900 hover:px-4 hover:py-2"
           onClick={() => mutation.mutate()}
         >
           {isStarred || starOn === true ? (

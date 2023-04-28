@@ -6,22 +6,22 @@ import Providers from './Provider'
 import { CommandMenu } from '@/components/CommandMenu'
 
 export const metadata = {
-  title: 'My Portfolio',
-  description: 'A portfolio website built with Next.js and Tailwind CSS',
+  title: 'Revogabe | Portfolio',
+  description: 'A portfolio of my projects, and a little bit about me.',
 }
 
 const lato = Lato({
-  weight: ['400', '300', '700', '900'],
+  weight: ['400', '300', '100', '700', '900'],
   subsets: ['latin'],
 })
 
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
-    <html lang="en" className={lato.className}>
-      <body className="text-zinc-300 w-screen min-h-screen bg-zinc-950 px-6 overflow-x-hidden">
+    <html lang="en" className={`scroll-pt-40 scroll-smooth ${lato.className}`}>
+      <body className=" min-h-screen w-screen overflow-x-hidden bg-zinc-950 px-6 text-zinc-300">
         <Providers>
           <Header />
-          <div className="w-full max-w-5xl mx-auto">
+          <div className="mx-auto w-full max-w-5xl px-1">
             {children}
             <CommandMenu />
           </div>

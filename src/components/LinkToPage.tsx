@@ -15,7 +15,7 @@ export function LinkToPage({ children, href }: LinkToPageProps) {
     <Link
       data-li={isActive === href ? 'checked' : ''}
       href={href}
-      className="text-md rounded bg-transparent px-3 py-2 font-bold text-zinc-600 transition-all duration-200 ease-out hover:bg-zinc-900 hover:text-zinc-200 data-checked:text-zinc-200 "
+      className="rounded bg-transparent px-3 py-2 text-base font-bold text-zinc-600 transition-all duration-200 ease-out hover:bg-zinc-900 hover:text-zinc-200 data-checked:text-zinc-200 "
     >
       {children}
     </Link>

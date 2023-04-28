@@ -4,12 +4,12 @@ import { HandIcon } from '@radix-ui/react-icons'
 
 export default function Projects() {
   return (
-    <main className="mt-32 pb-32 flex gap-12 flex-col min-h-screen w-full items-start justify-center">
-      <div className="fixed bottom-0 z-30 pointer-events-none bg-gradient-to-t to-transparent from-zinc-950 w-full h-32" />
+    <main className="mt-32 flex min-h-screen w-full flex-col items-start justify-center gap-12 pb-32">
+      <div className="pointer-events-none fixed bottom-0 z-30 h-32 w-full bg-gradient-to-t from-zinc-950 to-transparent" />
       <div className="w-full overflow-hidden ">
         <div
           draggable={false}
-          className="flex cursor-default items-center justify-center gap-2 text-sm text-zinc-400 hover:bg-zinc-800 duration-200 ease-out w-max bg-zinc-900 px-4 rounded-md py-2 mb-4"
+          className="mb-4 flex w-max cursor-default items-center justify-center gap-2 rounded-md bg-zinc-900 px-4 py-2 text-sm text-zinc-400 duration-200 ease-out hover:bg-zinc-800"
         >
           <HandIcon width={16} height={16} />
           <p className="select-none">Drag to The Side</p>
@@ -17,86 +17,50 @@ export default function Projects() {
         <EmblaCarousel />
       </div>
       <div className="h-px w-full bg-zinc-900" />
-      <div className="w-full grid sm:grid-cols-2 grid-cols-1 gap-6">
-        <div className="w-full flex flex-col items-center justify-start gap-6">
+      <div className="grid w-full grid-cols-1 gap-6 sm:grid-cols-2">
+        <div className="flex w-full flex-col items-center justify-start gap-6">
           <CardContainer
-            title="LoopyGo"
-            description="Loopy is a completely Open Source Duolingo-style programming learning platform."
-            link="https://github.com/LoopyGO"
+            title="Br Devstreamers V2"
+            description="redesign of the project conceived by falivjmendes which consists of bringing together the lives of br developers"
+            link="https://github.com/revogabe/br-devstreamers-v2"
+            deploy="https://br-devstreamers-v2.vercel.app/"
             variant="default"
           />
           <CardContainer
             title="LoopyGo"
             description="Loopy is a completely Open Source Duolingo-style programming learning platform."
-            banner="https://images.unsplash.com/photo-1605379399642-870262d3d051?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1206&q=80"
-            link="https://github.com/LoopyGO"
+            banner="/looppy.png"
+            link="https://github.com/LoopyGO/loopy-web"
+            deploy="https://loopygo.app/"
             variant="default"
           />
           <CardContainer
-            title="LoopyGo"
-            description="Loopy is a completely Open Source Duolingo-style programming learning platform."
-            banner="https://images.unsplash.com/photo-1605379399642-870262d3d051?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1206&q=80"
-            link="https://github.com/LoopyGO"
-            variant="default"
-          />
-          <CardContainer
-            title="LoopyGo"
-            description="Loopy is a completely Open Source Duolingo-style programming learning platform."
-            link="https://github.com/LoopyGO"
-            variant="default"
-          />
-          <CardContainer
-            title="LoopyGo"
-            description="Loopy is a completely Open Source Duolingo-style programming learning platform."
-            banner="https://images.unsplash.com/photo-1605379399642-870262d3d051?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1206&q=80"
-            link="https://github.com/LoopyGO"
-            variant="default"
-          />
-          <CardContainer
-            title="LoopyGo"
-            description="Loopy is a completely Open Source Duolingo-style programming learning platform."
-            link="https://github.com/LoopyGO"
+            title="Frontend Wheelo"
+            description="Frontend for a technical test that aimed to be a registration and management of cars and jwt authentication"
+            link="https://github.com/revogabe/front-wheelo"
             variant="default"
           />
         </div>
-        <div className="w-full flex flex-col items-center justify-start gap-6">
+        <div className="flex w-full flex-col items-center justify-start gap-6">
           <CardContainer
-            title="LoopyGo"
-            description="Loopy is a completely Open Source Duolingo-style programming learning platform."
-            banner="https://images.unsplash.com/photo-1605379399642-870262d3d051?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1206&q=80"
-            link="https://github.com/LoopyGO"
+            title="JobsDev GO"
+            description="This project is an API in Golang and Frontend in Next.js with the intention of studying more about Go and also helping the community with the job search in the market."
+            banner="/jobsdev.png"
+            link="https://github.com/revogabe/go-jobsdev"
+            deploy="https://jobsdev-go.vercel.app/"
             variant="default"
           />
           <CardContainer
-            title="LoopyGo"
-            description="Loopy is a completely Open Source Duolingo-style programming learning platform."
-            link="https://github.com/LoopyGO"
+            title="Backend Wheelo"
+            description="Node backend for a technical test that aimed to be a registration and management of cars and jwt authentication"
+            link="https://github.com/revogabe/backend-wheelo"
             variant="default"
           />
           <CardContainer
-            title="LoopyGo"
-            description="Loopy is a completely Open Source Duolingo-style programming learning platform."
-            banner="https://images.unsplash.com/photo-1605379399642-870262d3d051?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1206&q=80"
-            link="https://github.com/LoopyGO"
-            variant="default"
-          />
-          <CardContainer
-            title="LoopyGo"
-            description="Loopy is a completely Open Source Duolingo-style programming learning platform."
-            link="https://github.com/LoopyGO"
-            variant="default"
-          />
-          <CardContainer
-            title="LoopyGo"
-            description="Loopy is a completely Open Source Duolingo-style programming learning platform."
-            banner="https://images.unsplash.com/photo-1605379399642-870262d3d051?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1206&q=80"
-            link="https://github.com/LoopyGO"
-            variant="default"
-          />
-          <CardContainer
-            title="LoopyGo"
-            description="Loopy is a completely Open Source Duolingo-style programming learning platform."
-            link="https://github.com/LoopyGO"
+            title="My Portifolio"
+            description="My own portfolio about me and my projects made in next.js and mongoDB"
+            link="https://github.com/revogabe/my-portifolio"
+            deploy="https://revogabe.vercel.app/"
             variant="default"
           />
         </div>

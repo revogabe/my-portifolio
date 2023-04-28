@@ -1,5 +1,4 @@
 'use client'
-import Link from 'next/link'
 import { ReactNode } from 'react'
 
 type LinkSideProps = {
@@ -9,11 +8,11 @@ type LinkSideProps = {
 
 export function LinkSide({ children, href }: LinkSideProps) {
   return (
-    <Link
-      className="w-full hover:bg-zinc-900 text-zinc-200 px-4 py-2 hover:text-emerald-500 hover:brightness-110 ease-out transition-all duration-100 data-checked:bg-zinc-900 data-checked:text-emerald-400 rounded"
+    <a
+      className="w-full rounded px-4 py-2 text-zinc-200 transition-all duration-100 ease-out hover:bg-zinc-900 hover:text-emerald-500 hover:brightness-110 data-checked:bg-zinc-900 data-checked:text-emerald-400"
       href={href}
     >
       {children}
-    </Link>
+    </a>
   )
 }
