@@ -4,7 +4,7 @@ import { useState } from 'react'
 export type LanguageAboutProps = 'en' | 'br'
 
 export function LanguageAbout() {
-  const [language, setLanguage] = useState<LanguageAboutProps>('br')
+  const [language, setLanguage] = useState<LanguageAboutProps>('en')
 
   function handleLanguageEn() {
     setLanguage('en')
@@ -18,18 +18,18 @@ export function LanguageAbout() {
     <div className=" flex w-full flex-col gap-6">
       <div className="flex w-full items-center justify-start gap-2">
         <button
-          data-li={language === 'br' ? 'checked' : ''}
-          className="flex items-center gap-2 rounded-md px-4 py-2 text-zinc-400 transition-all duration-200 ease-out hover:scale-105 hover:bg-zinc-900 hover:text-emerald-500 data-checked:bg-zinc-900 data-checked:text-emerald-400"
-          onClick={handleLanguageBr}
-        >
-          Português
-        </button>
-        <button
           data-li={language === 'en' ? 'checked' : ''}
           className="flex items-center gap-2 rounded-md px-4 py-2 text-zinc-400 transition-all duration-200 ease-out hover:scale-105 hover:bg-zinc-900 hover:text-emerald-500 data-checked:bg-zinc-900 data-checked:text-emerald-400"
           onClick={handleLanguageEn}
         >
           English
+        </button>
+        <button
+          data-li={language === 'br' ? 'checked' : ''}
+          className="flex items-center gap-2 rounded-md px-4 py-2 text-zinc-400 transition-all duration-200 ease-out hover:scale-105 hover:bg-zinc-900 hover:text-emerald-500 data-checked:bg-zinc-900 data-checked:text-emerald-400"
+          onClick={handleLanguageBr}
+        >
+          Português
         </button>
       </div>
       {language === 'br' ? (
