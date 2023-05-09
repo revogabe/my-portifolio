@@ -20,6 +20,14 @@ export default function Projects() {
       <div className="grid w-full grid-cols-1 gap-6 sm:grid-cols-2">
         <div className="flex w-full flex-col items-center justify-start gap-6">
           <CardContainer
+            title="Translify GO"
+            description="Have you ever thought about practicing your English through natural conversation and being corrected every time you make a mistake? That was my project idea to improve my skills and seek opportunities in the market as a Developer."
+            banner="/translifygo.png"
+            link="https://github.com/revogabe/translify-go"
+            deploy="https://translifygo.vercel.app/"
+            variant="default"
+          />
+          <CardContainer
             title="Br Devstreamers V2"
             description="redesign of the project conceived by falivjmendes which consists of bringing together the lives of br developers"
             link="https://github.com/revogabe/br-devstreamers-v2"
@@ -27,7 +35,7 @@ export default function Projects() {
             variant="default"
           />
           <CardContainer
-            title="LoopyGo"
+            title="Loopy GO"
             description="Loopy is a completely Open Source Duolingo-style programming learning platform."
             banner="/looppy.png"
             link="https://github.com/LoopyGO/loopy-web"

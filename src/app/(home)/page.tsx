@@ -123,6 +123,12 @@ export default function Home() {
           </div>
           <div className="relative flex h-max w-full max-w-xl  flex-col gap-4 overflow-hidden rounded-lg ">
             <CardContainer
+              title="Translify GO"
+              description="Have you ever thought about practicing your English through natural conversation and being corrected every time you make a mistake? That was my project idea to improve my skills and seek opportunities in the market as a Developer."
+              link="https://github.com/revogabe/translify-go"
+              variant="minimal"
+            />
+            <CardContainer
               title="JobsDev GO"
               description="This project is an API in Golang and Frontend in Next.js with the intention of studying more about Go and also helping the community with the job search in the market."
               link="https://github.com/revogabe/go-jobsdev"
