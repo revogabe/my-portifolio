@@ -16,7 +16,7 @@ export const EmblaCarousel = () => {
               title="feat: add default value prop"
               prNumber="123"
               libName="pacocoursey / cmdk"
-              statusPr="open"
+              statusPr="merged"
               libLink="https://github.com/pacocoursey/cmdk"
               description="In this PR, I added the optional prop of default value, which, when passing the item's value to the default value, makes this item active. Otherwise, the function of activating the first item on the list continues."
               link="https://github.com/pacocoursey/cmdk/pull/123"
